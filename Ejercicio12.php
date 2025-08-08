@@ -1,15 +1,18 @@
 <?php
-//Operadores lógicos php
+//Operadores relacionarles php
 
 if($_POST){
 
     $valorA=$_POST['valorA'];
     $valorB=$_POST['valorB'];
 
-    if(($valorA != $valorB) || ($valorA > $valorB)){
+    if($valorA != $valorB){
 
-        echo "El valor de A es mayor que el valor de B o es diferente";
-    }
+        echo "El valor de A es diferente que el valor de B";
+    }else{
+
+			echo "El valor de A es igual que el valor de B";
+		}
 }
 
 ?>
@@ -22,7 +25,7 @@ if($_POST){
     <title>Operadores aritméticos</title>
 </head>
 <body>
-    <form action="Ejercicio10.php" method="post">
+    <form action="Ejercicio12.php" method="post">
         Valor A:
     <input type="number" name="valorA" id="">
     <br>
