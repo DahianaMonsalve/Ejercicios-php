@@ -26,20 +26,16 @@ class trabajador extends persona{ //Herencia
     public $puesto; //propiedad nueva
 
     public function presentarComoTrabajador(){
-        echo "hola soy ".$this->nombre." y soy un ".$this->puesto;
+        echo "Hola soy ".$this->nombre." y soy una ".$this->puesto;
     }
 
 }
 
-   
-
-
 
 $objTrabajador= new trabajador(); //instancia o creación d eun objeto
-$objTrabajador->asignarNombre("Dahiana"); //Lamando un método
-$objTrabajador->puesto="Profesor"; 
+$objTrabajador->asignarNombre("Dahiana Monsalve"); //Lamando un método
+$objTrabajador->puesto="desarrolladora"; // Propiedad
 
 $objTrabajador->presentarComoTrabajador();
-
 
 ?>
