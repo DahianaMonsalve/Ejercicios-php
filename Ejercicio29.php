@@ -1,4 +1,5 @@
 <?php
+//CONSULTA DE DATOS
 
 //Conexión a la BD
 $servidor="localhost"; // 127.0.0.1
@@ -12,11 +13,22 @@ try{
     $conexion=new PDO("mysql:host=$servidor;dbname=album", $usuario,$contrasena);
     $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    $sql="INSERT INTO `fotos`(`id`, `nombre`, `ruta`) VALUES (NULL,'Jugando con la programación','foto.jpg')";
+    $sql="SELECT * FROM `fotos`";
 
-    $conexion->exec($sql);
+    //
+    $sentencia=$conexion->prepare($sql);
+    $sentencia->execute();
 
-    echo "Conexión establecida";
+    $resultado=$sentencia->fetchAll();
+
+    //print_r($resultado);
+    echo "<br>";
+
+    foreach ($resultado as $foto){
+        echo $foto['nombre']."<br>";
+    }
+
+   // echo "Conexión establecida";
 
 }catch(PDOExeption $error){
     echo "Conexión erronea".$error;
